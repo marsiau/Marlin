@@ -1200,7 +1200,7 @@
 #define V_MAX_ENDSTOP_HIT_STATE HIGH
 #define W_MIN_ENDSTOP_HIT_STATE HIGH
 #define W_MAX_ENDSTOP_HIT_STATE HIGH
-#define Z_MIN_PROBE_ENDSTOP_HIT_STATE HIGH
+#define Z_MIN_PROBE_ENDSTOP_HIT_STATE LOW //was HIGH
 
 // Enable this feature if all enabled endstop pins are interrupt-capable.
 // This will remove the need to poll the interrupt pins, saving many CPU cycles.
@@ -1361,7 +1361,7 @@
 #define PROBE_ENABLE_PIN            PA1
 #define Z_MIN_PROBE_ENDSTOP_HIT_STATE LOW
 #define ENDSTOPPULLUP_ZMIN_PROBE
-#define Z_MIN_PROBE_ENDSTOP_INVERTING false 
+//#define Z_MIN_PROBE_ENDSTOP_INVERTING false  -> Z_MIN_PROBE_ENDSTOP_HIT_STATE LOW
 /**
  * Probe Type
  *
