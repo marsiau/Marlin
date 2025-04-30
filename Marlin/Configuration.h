@@ -128,7 +128,7 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "msEnder"
+#define CUSTOM_MACHINE_NAME "Cheeki Breeki"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -1186,7 +1186,7 @@
 #define X_MAX_ENDSTOP_HIT_STATE HIGH
 #define Y_MIN_ENDSTOP_HIT_STATE HIGH
 #define Y_MAX_ENDSTOP_HIT_STATE HIGH
-#define Z_MIN_ENDSTOP_HIT_STATE HIGH
+#define Z_MIN_ENDSTOP_HIT_STATE LOW // was high
 #define Z_MAX_ENDSTOP_HIT_STATE HIGH
 #define I_MIN_ENDSTOP_HIT_STATE HIGH
 #define I_MAX_ENDSTOP_HIT_STATE HIGH
@@ -1355,11 +1355,12 @@
 //===========================================================================
 // @section probes
 
-#define Z_MIN_PROBE_PIN             PC14
+//#define Z_MIN_PROBE_PIN             PC14 //->
+#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 #define FIX_MOUNTED_PROBE
 #define PROBE_ENABLE_DISABLE
-#define PROBE_ENABLE_PIN            PA1
-#define Z_MIN_PROBE_ENDSTOP_HIT_STATE LOW
+#define PROBE_ENABLE_PIN            PA8// <- PA1
+//#define Z_MIN_PROBE_ENDSTOP_HIT_STATE LOW
 #define ENDSTOPPULLUP_ZMIN_PROBE
 //#define Z_MIN_PROBE_ENDSTOP_INVERTING false  -> Z_MIN_PROBE_ENDSTOP_HIT_STATE LOW
 /**
@@ -2274,7 +2275,7 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT ((X_BED_SIZE - 10) / 2)    // (mm) X point for Z homing
