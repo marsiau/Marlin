@@ -1359,10 +1359,9 @@
 #define FIX_MOUNTED_PROBE
 #define PROBE_ENABLE_DISABLE
 #define PROBE_ENABLE_PIN            PA1
-#define NOZZLE_TO_PROBE_OFFSET      { 0, 0, 0 }  // Adjust after a paper test
-#define Z_MIN_PROBE_ENDSTOP_INVERTING true
+#define Z_MIN_PROBE_ENDSTOP_HIT_STATE LOW
 #define ENDSTOPPULLUP_ZMIN_PROBE
-
+#define Z_MIN_PROBE_ENDSTOP_INVERTING false 
 /**
  * Probe Type
  *
@@ -1578,7 +1577,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+#define NOZZLE_TO_PROBE_OFFSET {-43, -30, 0 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
