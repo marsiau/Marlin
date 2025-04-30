@@ -1355,34 +1355,13 @@
 //===========================================================================
 // @section probes
 
-//
-// See https://marlinfw.org/docs/configuration/probes.html
-//
-
-/**
- * Enable this option for a probe connected to the Z-MIN pin.
- * The probe replaces the Z-MIN endstop and is used for Z homing.
- * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
- */
- //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
-
-// Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
-
-/**
- * Z_MIN_PROBE_PIN
- *
- * Override this pin only if the probe cannot be connected to
- * the default Z_MIN_PROBE_PIN for the selected MOTHERBOARD.
- *
- *  - The simplest option is to use a free endstop connector.
- *  - Use 5V for powered (usually inductive) sensors.
- *
- *  - For simple switches...
- *    - Normally-closed (NC) also connect to GND.
- *    - Normally-open (NO) also connect to 5V.
- */
-//#define Z_MIN_PROBE_PIN -1
+#define Z_MIN_PROBE_PIN             PC14
+#define FIX_MOUNTED_PROBE
+#define PROBE_ENABLE_DISABLE
+#define PROBE_ENABLE_PIN            PA1
+#define NOZZLE_TO_PROBE_OFFSET      { 0, 0, 0 }  // Adjust after a paper test
+#define Z_MIN_PROBE_ENDSTOP_INVERTING true
+#define ENDSTOPPULLUP_ZMIN_PROBE
 
 /**
  * Probe Type
